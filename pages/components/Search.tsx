@@ -340,18 +340,18 @@ const DropdownMenu = ({ isOpen, targetRef, children }) => {
     useLayoutEffect(() => {
         calculatePosition();
     }, [isOpen, targetRef]);
-
+    
     useEffect(() => {
         const handleResize = () => {
             calculatePosition();
         };
-
+    
         window.addEventListener('resize', handleResize);
-
+    
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
+    }, [calculatePosition]);
 
     return (
         <div

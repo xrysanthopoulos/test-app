@@ -32,7 +32,7 @@ const Properties: React.FC = () => {
       case 'Δημοφιλή':
         sortedArray.sort((a, b) => b.rating - a.rating);
         break;
-      case 'Φθίνουσα':
+      case 'Αύξουσα':
         sortedArray.sort((a, b) => a.price - b.price);
         break;
       case 'Αλφαβητικά':
@@ -46,7 +46,7 @@ const Properties: React.FC = () => {
 
   useEffect(() => {
     sortData(selectedOption);
-  }, [selectedOption, data]);
+  }, [selectedOption, data, sortData]);
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
