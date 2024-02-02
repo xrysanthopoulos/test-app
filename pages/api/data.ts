@@ -18,7 +18,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const data = await response.json();
     res.status(200).json(data);
-  } catch (error) {
+  } catch (error: any) {
+    // Explicitly type 'error' as 'any' to access its 'message' property
     res.status(500).json({ error: error.message });
   }
 }
