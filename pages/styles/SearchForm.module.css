@@ -1,0 +1,331 @@
+/* Search form */
+
+.search-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.search-inputs {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* Inputs */
+
+.input-container {
+    position: relative;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 15px 7px 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.3s ease-out;
+    color: #999;
+}
+
+.input-container input:focus+label,
+.input-container input:not(:placeholder-shown)+label {
+    top: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+.input-container input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.input-container input:is(:focus)::placeholder {
+    color: #ccc;
+}
+
+/* Location */
+
+.city-section,
+.hotel-section {
+    flex: 1;
+    padding: 16px;
+}
+
+.city-section h3,
+.hotel-section h3 {
+    margin-top: 0;
+}
+
+.city-section div,
+.hotel-section div {
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.city-section div:hover,
+.hotel-section div:hover {
+    background-color: #f0f0f0;
+}
+
+.location-dropdown {
+    position: relative;
+    display: flex;
+}
+
+.location-dropdown input {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.titleCity {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.locationCity {
+    margin: 15px;
+}
+
+/* Dropdown */
+
+.dropdown-content {
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0 0;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown-content.open {
+    display: block;
+    opacity: 1;
+    margin: 12px -5px;
+}
+
+.dropdown-content h3 {
+    margin-top: 0;
+}
+
+.city-section,
+.hotel-section {
+    margin-bottom: 10px;
+}
+
+.city-section div,
+.hotel-section div {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.city-section div:hover,
+.hotel-section div:hover {
+    background-color: #f0f0f0;
+}
+
+/* Guest */
+
+.quest-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e1ff00;
+}
+
+/* Calendar */
+
+.calendar-container {
+    display: flex;
+}
+
+.calendar-month {
+    margin: 0 10px;
+}
+
+.calendar-header {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    background-color: #f0f0f0;
+}
+
+.calendar-day.active {
+    background-color: #fff;
+    color: #fff;
+}
+
+.selected-dates {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.calendar-month {
+    margin-bottom: 20px;
+}
+
+.calendar-header {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.calendar-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px; 
+}
+
+.calendarDayName {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.calendarDay {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.selectedStart {
+    background-color: var(--blue-color);
+}
+
+.selectedEnd {
+    background-color: var(--blue-color);
+}
+
+.selectedRange {
+    background-color: var(--blue-color);
+}
+
+.calendar-day {
+    padding: 5px;
+    border: 1px solid transparent;
+}
+
+.calendar-day.selected-start {
+    background-color: lightblue;
+}
+
+.calendar-day.selected-end {
+    background-color: lightblue; 
+}
+
+.calendar-day.selected-range {
+    background-color: lightblue;
+}
+
+/* Guest */
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.counter-btn {
+    cursor: pointer;
+    padding: 4px;
+}
+
+.counter-value {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Counter */
+
+.guest-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.adults,
+.children {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.adults p,
+.children p,
+.adults span,
+.children span {
+    margin-right: 10px;
+}
+
+.adults .counter,
+.children .counter {
+    margin-left: auto;
+}
+
+.adults .text h3 {
+    font-size: 30px;
+}
+
+/* Button search */
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--green-color);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .icon {
+    margin-right: 5px;
+  }

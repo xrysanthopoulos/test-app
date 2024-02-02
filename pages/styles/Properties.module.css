@@ -1,0 +1,76 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    display: flex;
+    width: 90%;
+    height: 80%;
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px 20px;
+    justify-content: center;
+  }
+  
+  .filters {
+    flex: 0 0 20%;
+    background-color: var(--black-color);
+    padding: 20px;
+    margin-top: 75px;
+    border-radius: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .filters {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .grid {
+      padding: 0;
+    }
+  }
+
+  .topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+    
+  .leftText {
+    margin-bottom: 10px;
+  }
+
+  .moreButton {
+    margin: auto;
+    padding: 10px 30px;
+    border: 1px solid var(--green-color);
+    color: var(--green-color);
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    .leftText {
+        display: none;
+    }
+
+    .topBar {
+      padding: 20px 10px;
+      justify-content: flex-end;
+  }
+}
+
