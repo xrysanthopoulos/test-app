@@ -13,6 +13,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
+    
+    res.setHeader('Cache-Control', 'public, max-age=3600');
 
     const data = await response.json();
     res.status(200).json(data);

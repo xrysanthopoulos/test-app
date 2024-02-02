@@ -4,6 +4,7 @@
     overflow: hidden;
     width: calc(33.33% - 20px);
     min-width: 170px;
+    border-top: none;
   }
 
   .cardImage img {

@@ -26,10 +26,6 @@ const Properties: React.FC = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    sortData(selectedOption);
-  }, [selectedOption, data]);
-
   const sortData = (option: string) => {
     let sortedArray = [...data];
     switch (option) {
@@ -47,6 +43,10 @@ const Properties: React.FC = () => {
     }
     setSortedData(sortedArray);
   };
+
+  useEffect(() => {
+    sortData(selectedOption);
+  }, [selectedOption, data]);
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);

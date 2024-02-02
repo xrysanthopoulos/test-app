@@ -5,21 +5,23 @@ const headerStyles: React.CSSProperties = {
   textTransform: 'uppercase',
   textAlign: 'center',
   fontWeight: 'bold',
+  margin: "20px 0",
 };
 
 const countyStyles: React.CSSProperties = {
   fontSize: '4rem',
+
 };
 
 const Header: React.FC = () => {
   return (
     <div id='header' style={headerStyles}>
       <Breadcrumbs />
-      <div style={{ margin: '40px' }}>
+      <div style={{marginBottom: '50px'}}>
         <p lang='el' style={countyStyles}>
           Ελλάδα
         </p>
-        <div>Πακέτα - Προσφορές</div>
+        <div style={{fontWeight: '400', textTransform: 'none'}}>Πακέτα - Προσφορές</div>
       </div>
     </div>
   );
