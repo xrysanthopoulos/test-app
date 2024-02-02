@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 import CardStyle from '../styles/Card.module.css';
 
 interface CardProps {
@@ -17,7 +18,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
     <div className={CardStyle.card}>
       <div className={CardStyle.cardImage}>
         {/* Card Image */}
-        <img src={data.photo} alt="Property" />
+        <Image width={100} height={100} src={data.photo} alt="Property" />
       </div>
       <div className={CardStyle.cardContent}>
         {/* Card Content */}

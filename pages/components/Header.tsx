@@ -1,30 +1,29 @@
 import React from 'react'
 
-const Header = () => {
+const headerStyles: React.CSSProperties = {
+  fontSize: '11px',
+  textTransform: 'uppercase',
+  textAlign: 'center',
+  fontWeight: 'bold',
+};
 
-    const header = {
-        color: "#333",
-        fontFamily: "Arial",
-        textAlign: 'center',
-      };
+const countyStyles: React.CSSProperties = {
+  fontSize: '4rem',
+};
 
-    const county = {
-        fontSize: "60px",
-        textTransform: 'uppercase',
-        textAlign: 'center',
-        fontWeight: '600',
-      };
-
+const Header: React.FC = () => {
   return (
-    <div id='header' style={header}>
-        <Breadcrumbs/>
-            <div style={{margin: '40px'}}>
-                <p lang='el' style={county} >Ελλάδα</p>
-                <div>Πακέτα - Προσφορές</div>
-            </div>
+    <div id='header' style={headerStyles}>
+      <Breadcrumbs />
+      <div style={{ margin: '40px' }}>
+        <p lang='el' style={countyStyles}>
+          Ελλάδα
+        </p>
+        <div>Πακέτα - Προσφορές</div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Header
 
@@ -43,9 +42,9 @@ const Breadcrumbs = () => {
     return (
       <div style={breadcrumbStyle}>
         <p style={{ margin: '0' }}>Αρχική</p>
-        <span style={separatorStyle}>></span>
+        <span style={separatorStyle}>&#10093;</span>
         <p style={{ margin: '0' }}>Ελλάδα</p>
-        <span style={separatorStyle}>></span>
+        <span style={separatorStyle}>&#10093;</span>
         <p style={{ margin: '0' }}>Πακέτα</p>
       </div>
     );
