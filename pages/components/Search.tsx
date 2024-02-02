@@ -54,8 +54,6 @@ const SearchForm = () => {
     const guestRef = useRef(null);
     const [dropdownType, setDropdownType] = useState('location');
 
-    const [value, setValue] = useState('');
-    const [focused, setFocused] = useState(false);
 
     const [cities] = useState(['New York', 'Los Angeles', 'London', 'Paris', 'Tokyo']);
     const [hotels] = useState(['Hotel A', 'Hotel B', 'Hotel C', 'Hotel D', 'Hotel E']);
@@ -115,18 +113,6 @@ const SearchForm = () => {
         setSelectedGuest(data);
     };
 
-    const handleFocus = () => {
-        setFocused(true);
-    };
-
-    const handleBlur = () => {
-        setFocused(false);
-    };
-
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
-
     return (
         <>
             <div className={SearchFormStyle["search-form-container"]}>
@@ -138,13 +124,10 @@ const SearchForm = () => {
                             placeholder="Ελλάδα"
                             value={selectedLocation}
                             onClick={handleLocationClick}
-                            onFocus={handleFocus}
-                            onBlur={handleBlur}
-                            onChange={handleChange}
                             ref={locationRef}
                             readOnly
                         />
-                        <label htmlFor="input" className={focused ? SearchFormStyle.active : ''}>
+                        <label htmlFor="input">
                             Προορισμός
                         </label>
                     </div>
@@ -155,13 +138,10 @@ const SearchForm = () => {
                             placeholder="Ημερομηνία"
                             value={selectedCheckIn}
                             onClick={handleCheckinInputClick}
-                            onFocus={handleFocus}
-                            onBlur={handleBlur}
-                            onChange={handleChange}
                             ref={calendarRef}
                             readOnly
                         />
-                        <label htmlFor="input" className={focused ? SearchFormStyle.active : ''}>
+                        <label htmlFor="input">
                             Check In
                         </label>
                     </div>
@@ -172,12 +152,9 @@ const SearchForm = () => {
                             placeholder="Ημερομηνία"
                             value={selectedCheckOut}
                             onClick={handleCheckoutInputClick}
-                            onFocus={handleFocus}
-                            onBlur={handleBlur}
-                            onChange={handleChange}
                             readOnly
                         />
-                        <label htmlFor="input" className={focused ? SearchFormStyle.active : ''}>
+                        <label htmlFor="input">
                             Check Out
                         </label>
                     </div>
@@ -187,13 +164,10 @@ const SearchForm = () => {
                             id="guest"
                             placeholder={selectedGuest}
                             onClick={handleGuestInputClick}
-                            onFocus={handleFocus}
-                            onBlur={handleBlur}
-                            onChange={handleChange}
                             ref={guestRef}
                             readOnly
                         />
-                        <label htmlFor="input" className={focused ? SearchFormStyle.active : ''}>
+                        <label htmlFor="input">
                             Αριθμός ατόμων
                         </label>
                     </div>
